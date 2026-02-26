@@ -26,15 +26,6 @@ function App() {
     setSubmitted(true);
   };
 
-  if (submitted) {
-    return (
-      <div>
-        <p>Nametag goes here</p>
-        <button onClick={() => setSubmitted(false)}>Edit</button>
-      </div>
-    );
-  }
-
   return (
     <div>
       <h1>Simple Form</h1>
@@ -81,6 +72,7 @@ function App() {
         </label>
         <button type="submit">Submit</button>
       </form>
+      {submitted && <p>Nametag goes here</p>}
     </div>
   );
 }
