@@ -72,7 +72,14 @@ function App() {
         </label>
         <button type="submit">Submit</button>
       </form>
-      {submitted && <p>Nametag goes here</p>}
+      {submitted && (
+        <div>
+          <p>Hello, my name is</p>
+          <p>{formData.firstName} {formData.lastName}</p>
+          <p>{formData.jobTitle}</p>
+          <p>{formData.hometown}</p>
+        </div>
+      )}
     </div>
   );
 }
