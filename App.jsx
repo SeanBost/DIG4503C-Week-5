@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -27,9 +28,9 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="page-wrapper">
       <h1>Simple Form</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <label>
           First Name:
           <input
@@ -73,11 +74,19 @@ function App() {
         <button type="submit">Submit</button>
       </form>
       {nametag && (
-        <div>
-          <p>Hello, my name is</p>
-          <p>{nametag.firstName} {nametag.lastName}</p>
-          <p>{nametag.jobTitle}</p>
-          <p>{nametag.hometown}</p>
+        <div className="nametag">
+          <div className="nametag-banner">Hello, my name is</div>
+          <p className="nametag-name">{nametag.firstName} {nametag.lastName}</p>
+          <hr className="nametag-divider" />
+          <div className="nametag-field">
+            <span className="nametag-field-label">Job Title:</span>
+            <span className="nametag-field-value">{nametag.jobTitle}</span>
+          </div>
+          <div className="nametag-field">
+            <span className="nametag-field-label">Hometown:</span>
+            <span className="nametag-field-value">{nametag.hometown}</span>
+          </div>
+          <div className="nametag-footer" />
         </div>
       )}
     </div>
