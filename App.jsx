@@ -15,7 +15,13 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted:", formData);
+    const trimmed = {
+      firstName: formData.firstName.trim(),
+      lastName: formData.lastName.trim(),
+      jobTitle: formData.jobTitle.trim(),
+      hometown: formData.hometown.trim(),
+    };
+    console.log("Submitted:", trimmed);
   };
 
   return (
@@ -26,6 +32,7 @@ function App() {
           First Name:
           <input
             type="text"
+            required
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
@@ -35,6 +42,7 @@ function App() {
           Last Name:
           <input
             type="text"
+            required
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
@@ -44,6 +52,7 @@ function App() {
           Job Title:
           <input
             type="text"
+            required
             name="jobTitle"
             value={formData.jobTitle}
             onChange={handleChange}
@@ -53,6 +62,7 @@ function App() {
           Hometown:
           <input
             type="text"
+            required
             name="hometown"
             value={formData.hometown}
             onChange={handleChange}
