@@ -7,7 +7,7 @@ function App() {
     jobTitle: "",
     hometown: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [nametag, setNametag] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +23,7 @@ function App() {
       hometown: formData.hometown.trim(),
     };
     console.log("Submitted:", trimmed);
-    setSubmitted(true);
+    setNametag(trimmed);
   };
 
   return (
@@ -72,12 +72,12 @@ function App() {
         </label>
         <button type="submit">Submit</button>
       </form>
-      {submitted && (
+      {nametag && (
         <div>
           <p>Hello, my name is</p>
-          <p>{formData.firstName} {formData.lastName}</p>
-          <p>{formData.jobTitle}</p>
-          <p>{formData.hometown}</p>
+          <p>{nametag.firstName} {nametag.lastName}</p>
+          <p>{nametag.jobTitle}</p>
+          <p>{nametag.hometown}</p>
         </div>
       )}
     </div>
