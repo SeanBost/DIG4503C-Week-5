@@ -7,6 +7,7 @@ function App() {
     jobTitle: "",
     hometown: "",
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +23,17 @@ function App() {
       hometown: formData.hometown.trim(),
     };
     console.log("Submitted:", trimmed);
+    setSubmitted(true);
   };
+
+  if (submitted) {
+    return (
+      <div>
+        <p>Nametag goes here</p>
+        <button onClick={() => setSubmitted(false)}>Edit</button>
+      </div>
+    );
+  }
 
   return (
     <div>
