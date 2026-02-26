@@ -86,7 +86,6 @@ function App() {
             <span className="nametag-field-label">Hometown:</span>
             <span className="nametag-field-value">{nametag.hometown}</span>
           </div>
-          <div className="nametag-footer" />
         </div>
       )}
     </div>

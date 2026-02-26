@@ -39,11 +39,12 @@ body {
   padding: 0.45rem 0.65rem;
   border: 2px solid #333;
   border-radius: 0.5rem;
-  outline: none;
 }
 
 .form input:focus {
+  outline: none;
   border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.35);
 }
 
 .form button {
@@ -55,7 +56,8 @@ body {
   color: white;
   border: 2px solid #333;
   border-radius: 0.5rem;
-  padding: 0.6rem 1.25rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
   cursor: pointer;
   box-shadow: 3px 3px 0 #333;
   transition: background 0.15s;
@@ -77,8 +79,9 @@ body {
   border-radius: 1rem;
   box-shadow: 5px 5px 0 #333;
   max-width: 360px;
-  margin: 2rem auto 0;
+  margin: 2rem auto;
   overflow: hidden;
+  padding-bottom: 1rem;
 }
 
 .nametag-banner {
@@ -99,6 +102,7 @@ body {
   margin: 0.75rem 1rem 0.5rem;
   color: #1a1a1a;
   line-height: 1.2;
+  overflow-wrap: break-word;
 }
 
 .nametag-divider {
@@ -115,7 +119,7 @@ body {
 }
 
 .nametag-field-label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -126,8 +130,5 @@ body {
 .nametag-field-value {
   font-size: 1rem;
   color: #333;
-}
-
-.nametag-footer {
-  height: 1rem;
+  overflow-wrap: break-word;
 }
