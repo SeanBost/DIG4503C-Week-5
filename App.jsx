@@ -7,7 +7,6 @@ function App() {
     jobTitle: "",
     hometown: "",
   });
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,20 +15,8 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    console.log("Submitted:", formData);
   };
-
-  if (submitted) {
-    return (
-      <div>
-        <p>First Name: {formData.firstName}</p>
-        <p>Last Name: {formData.lastName}</p>
-        <p>Job Title: {formData.jobTitle}</p>
-        <p>Hometown: {formData.hometown}</p>
-        <button onClick={() => setSubmitted(false)}>Edit</button>
-      </div>
-    );
-  }
 
   return (
     <div>
